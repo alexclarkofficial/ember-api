@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ApiEmberjsCom</title>
+    <title>Ember.js | API</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,10 +12,92 @@
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/api-emberjs-com.css">
   </head>
-  <body>
+
+  <body class="api api_modules api_modules_ember-views">
     {{content-for 'body'}}
 
     <script src="assets/vendor.js"></script>
     <script src="assets/api-emberjs-com.js"></script>
-  </body>
-</html>
+      <div id="header">
+        <div id="wrapper">
+          <a id="logo" href="/">&nbsp;</a>
+          <ul id="nav">
+            <li><a href="/about">about</a></li>
+            <li><a href="/guides">guides</a></li>
+            <li class="active"><a href="/api">api</a></li>
+            <li><a href="/community">community</a></li>
+            <li><a href="/blog">blog</a></li>
+            <li><a href="/builds">builds</a></li>
+            <li id="search">
+              <form>
+                <input type="text" id="st-search-input" class="st-search-input" autocomplete="off" autocorrect="off" autocapitalize="off" style="outline: none;">
+              </form>
+              <div id="st-results-container"></div>
+            </li>
+          </ul>
+
+          <div id="github">
+            <a href="https://github.com/emberjs/ember.js"><i class="icon-fork"></i>Fork Us!</a>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div id="content-wrapper">
+
+      </div>
+
+  <!--[if lt IE 9]>
+      <script type="text/javascript" src="/javascripts/common-old-ie.js"></script>
+  <![endif]-->
+  <!--[if gte IE 9]><!-->
+      <script type="text/javascript" async="" src="//s.swiftypecdn.com/cc.js"></script><script type="text/javascript" async="" src="//s.swiftypecdn.com/assets/swiftype_nocode-8d760cfb79c32623204d982c6fac2420.js"></script><script type="text/javascript" async="" src="http://www.google-analytics.com/plugins/ga/inpage_linkid.js" id="undefined"></script><script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript" async="" src="//swiftype.com/embed.js"></script><script type="text/javascript" src="/javascripts/common-modern.js"></script>
+  <!--<![endif]-->
+          <script type="text/javascript" src="/javascripts/api.js"></script>
+
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+        _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+        _gaq.push(['_setAccount', 'UA-27675533-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+
+
+  <iframe id="rdbIndicator" width="100%" height="270" border="0" src="chrome-extension://oknpjjbmpnndlpmnhmekjpocelpnlfdi/indicator.html" style="display: none; border: 0; position: fixed; left: 0; top: 0; z-index: 2147483647"></iframe><div id="st-main-container" style="display: none;">
+    <div class="swiftype">
+    <a class="close" data-dismiss="st-modal" href="#">×</a>
+    <div class="st-search-bar st-only-input">
+      <form>
+        <div class="st-input-wrapper">
+          <div class="st-input-inner">
+            <input type="text" value="" id="st-overlay-search-input" placeholder="search this website" autocomplete="off" autocorrect="off" autocapitalize="off" style="outline: none;">
+            <span class="st-input-icon"></span>
+            <a href="https://swiftype.com?ref=pbo" class="st-input-powered-by st-powered-by" target="_blank"></a>
+          </div>
+          <input type="submit" value="search" id="submitbutton">
+        </div>
+      </form>
+    </div>
+    <div class="st-result-wrapper" style="min-height: 239px;">
+      <div class="st-result-listing">
+        <div class="st-results">
+        </div>
+        <div class="st-indexing-notice" style="display: none;">
+          This site is still being indexed. Please try your search again in a few minutes.
+        </div>
+        <div class="st-logo-footer st-powered-by">
+          <a href="http://swiftype.com?ref=pbo" target="_blank">search by swiftype</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div><div class="swiftype-widget"><div class="autocomplete" style="position: absolute; z-index: 199999; width: 210px; top: 0px; left: -8px; display: none;"><ul></ul></div></div><div class="swiftype-widget"><div class="autocomplete" style="position: absolute; z-index: 199999; width: 210px; top: 44px; left: 875.171875px; display: none;"><ul></ul></div></div>
+</body>

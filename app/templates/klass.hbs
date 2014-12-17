@@ -1,0 +1,71 @@
+<h1 class="api-header">
+  {{model.name}} Class
+    <a class="edit-page icon-pencil" target="_blank" href="https://github.com/emberjs/ember.js/tree/5fe2d63/packages/ember-application/lib/system/application.js#L56">{{model.location}}</a>
+</h1>
+
+<hr>
+
+
+<div class="class-info">
+  <p>Extends: <a href="/api/classes/Ember.Namespace.html">{{model.extends}}</a></p>
+  <p>Defined in: <a class="api-file-link" href="https://github.com/emberjs/ember.js/tree/5fe2d63/packages/ember-application/lib/system/application.js#L56">{{model.location}}</a></p>
+  <p>Module: <a href="/api/modules/ember-application.html">{{model.module}}</a></p>
+</div>
+
+<div class="description">
+  {{{model.description}}}
+</div>
+
+
+  <div class="tabs">
+    <ul>
+      {{#link-to 'klass.index' tagName='li'}}
+        {{#link-to 'klass.index'}}
+          Index
+        {{/link-to}}
+      {{/link-to}}
+
+      {{#link-to 'klass.methods' tagName='li'}}
+        {{#link-to 'klass.methods'}}
+          Methods
+        {{/link-to}}
+      {{/link-to}}
+
+      {{#link-to 'klass.properties' tagName='li'}}
+        {{#link-to 'klass.properties'}}
+          Properties
+        {{/link-to}}
+      {{/link-to}}
+
+      {{#link-to 'klass.events' tagName='li'}}
+        {{#link-to 'klass.events'}}
+          Events
+        {{/link-to}}
+      {{/link-to}}
+    </ul>
+    <div class="pane" id="index" style="display: block;">
+      <div id="api-options">
+        Show:
+        <label>
+          <input type="checkbox" data-type="inherited">
+          Inherited
+        </label>
+        <label>
+          <input type="checkbox" data-type="protected">
+          Protected
+        </label>
+        <label>
+          <input type="checkbox" data-type="private">
+          Private
+        </label>
+        <label>
+          <input type="checkbox" data-type="deprecated">
+          Deprecated
+        </label>
+      </div>
+
+  <p></p>
+
+  {{outlet}}
+
+</div>

@@ -1,0 +1,37 @@
+<h2>Methods</h2>
+
+<p></p>
+<ul class="index-list">
+  <!-- todo: private, protected, inherited, and deprecated states -->
+  {{#each method in model.methods}}
+    <li class="method">
+      <a href="#method__initialize">{{method.name}}</a>
+    </li>
+  {{/each}}
+</ul>
+
+<p></p>
+
+<h2>Properties</h2>
+<p></p>
+
+<ul class="index-list">
+  <!-- todo: private, protected, inherited, and deprecated states -->
+  {{#each property in model.properties}}
+    <li class="property">
+      <a href="#property_concatenatedProperties">{{property.name}}</a>
+    </li>
+  {{/each}}
+</ul>
+<p></p>
+
+<h2>Events</h2>
+
+<p></p>
+<ul class="index-list">
+  {{#each event in model.events}}
+    <li class="event ">
+      <a href="#event_ready">{{event.name}}</a>
+    </li>
+  {{/each}}
+</ul>
