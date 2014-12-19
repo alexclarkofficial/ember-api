@@ -20,9 +20,9 @@
       <a href="#">Modules</a>
       <ol class="selected">
         {{#each module in model.modules}}
-          <li class="level-3 ">
-            <a href="#">{{module.name}}</a>
-          </li>
+          {{#link-to 'module' tagName='li' class='level-3'}}
+            {{#link-to 'module' module.name}}{{module.name}}{{/link-to}}
+          {{/link-to}}
         {{/each}}
       </ol>
     </li>
@@ -30,9 +30,9 @@
       <a href="#">Namespaces</a>
         <ol>
           {{#each namespace in model.namespaces}}
-            <li class="level-3 ">
-              <a href="#">{{namespace.name}}</a>
-            </li>
+            {{#link-to 'namespace' tagName='li' class='level-3'}}
+              {{#link-to 'namespace' namespace.name}}{{namespace.name}}{{/link-to}}
+            {{/link-to}}
           {{/each}}
         </ol>
 
@@ -40,9 +40,9 @@
       <a href="#">Classes</a>
       <ol class="">
         {{#each klass in classes}}
-          <li class="level-3 ">
-            <a href="#">{{klass.name}}</a>
-          </li>
+          {{#link-to 'klass' tagName='li' class='level-3'}}
+            {{#link-to 'klass' klass.name}}{{klass.name}}{{/link-to}}
+          {{/link-to}}
         {{/each}}
       </ol>
     </li>
@@ -52,27 +52,7 @@
     </div>
   </ol>
 </div>
+
 <div id="content" class="has-sidebar">
   {{outlet}}
 </div>
-
-<div id="footer">
-  <div id="footer-wrapper">
-    <div class="info">
-      Copyright 2014 <a href="http://tilde.io">Tilde Inc.</a><br>
-      <a href="/team">Core Team</a> | <a href="/sponsors">Sponsors</a> | <a href="/legal">Legal</a><br>
-      <a href="/guidelines">Community Guidelines</a>
-    </div>
-    <div class="statement">Ember.js is free, open source and always will be.</div>
-    <div class="links">
-      <a class="twitter" href="http://twitter.com/emberjs">
-        <i class="icon-twitter"></i><span>Twitter</span>
-      </a>
-      <a class="github" href="https://github.com/emberjs/ember.js">
-        <i class="icon-github"></i><span>GitHub</span>
-      </a>
-      <a class="googleplus" href="https://plus.google.com/communities/106387049790387471205">
-        <i class="icon-gplus"></i><span>Google+</span>
-      </a>
-    </div>
-  </div>
