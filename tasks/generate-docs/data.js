@@ -1,38 +1,22 @@
-/* jshint node: true */
-
-var fs = require('fs');
-var yuidocOutput = JSON.parse(fs.readFileSync('./data.json', {encoding: ''}));
-
-// low frills object clone.
-function copy(object){
-  return JSON.parse(JSON.stringify(object));
-}
-
-// used to generate methods on the Klass prototype.
-function filterItemType(type){
-  return function(){
-    return this.items().filter(function(item){
-      item.itemtype === type;
-    });
-  }
-}
+var copy = require('./utils').copy;
+var yuidoc = require('./yuidoc');
 
 
 function Klass(name){
   this.name = name;
-  this.classItems = {};
-  if (yuidocOutput.classes[name]) {
-    this.yuidocData = yuidocOutput.classes[name];
+  if (yuidoc.classes[name]) {
+    this.yuidocData = yuidoc.classes[name];
   } else {
-    throw("no data for " + name + " in data")
+    // throw("no data for " + name + " in data")
+    this.yuidocData = {};
   }
 }
-
 
 Klass.prototype = {
   items: function(){
     if (this.hasOwnProperty('_items')) { return this._items; }
 
+    // poor man's Set.
     var itemsKeyedByName = {};
 
     var parents = [this.extends()];
@@ -53,7 +37,7 @@ Klass.prototype = {
     // loop through every class item in the entire library looking for
     // items for only this class, adding them to the collection of
     // items keyed by name
-    yuidocOutput['classitems'].forEach(function(classItem){
+    yuidoc['classitems'].forEach(function(classItem){
       if(classItem['class'] === this.name) {
         itemsKeyedByName[classItem.name] = copy(classItem);
       }
@@ -62,16 +46,12 @@ Klass.prototype = {
     this._items = Object.keys(itemsKeyedByName).map(function(key){ return itemsKeyedByName[key]; });
     return this._items;
   },
-  methods: filterItemType('method'),
-  properties: filterItemType('property'),
-  events: filterItemType('event'),
   extends: function(){
     if (this.hasOwnProperty('_extends')) { return this._extends; }
 
     var extended = this.yuidocData['extends'];
-    console.log(yuidocOutput['classes'][this.name]);
 
-    if (extended && yuidocOutput['classes'][this.name]) {
+    if (extended && yuidoc['classes'][this.name]) {
       this._extends = Klass.find(extended);
     } else {
       this._extends = null;
@@ -107,11 +87,4 @@ Klass.find = function(name){
   return klass;
 }
 
-
-
-// start processing
-// var items = Object.keys(yuidocOutput['classes']).map(function(className){
-//   return Klass.find(yuidocOutput['classes'][className].name).items();
-// });
-
-fs.writeFileSync('out.json', JSON.stringify(Klass.find('Ember.View').items(), null, 2))
+module.exports = Klass;
