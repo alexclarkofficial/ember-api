@@ -2,7 +2,6 @@
 
 <p></p>
 <ul class="index-list">
-  <!-- todo: private, protected, inherited, and deprecated states -->
   {{#each method in model.methods}}
     <li class="method">
       {{#link-to 'klass.methods.method' method.name}}
@@ -18,7 +17,6 @@
 <p></p>
 
 <ul class="index-list">
-  <!-- todo: private, protected, inherited, and deprecated states -->
   {{#each property in model.properties}}
     <li class="property">
       {{#link-to 'klass.properties.property' property.name}}

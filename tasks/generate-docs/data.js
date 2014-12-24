@@ -39,7 +39,10 @@ Klass.prototype = {
     // items keyed by name
     yuidoc['classitems'].forEach(function(classItem){
       if(classItem['class'] === this.name) {
-        itemsKeyedByName[classItem.name] = copy(classItem);
+        var itemCopy = copy(classItem);
+        if(itemCopy.access === "private") { itemCopy.isPrivate= true; }
+
+        itemsKeyedByName[classItem.name] = itemCopy;
       }
     }, this);
 

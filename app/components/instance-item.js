@@ -1,7 +1,6 @@
 import Ember from "ember";
 var alias = Ember.computed.alias;
 var not = Ember.computed.not;
-var run = Ember.run;
 var get = Ember.get;
 
 export default Ember.Component.extend({
@@ -61,8 +60,8 @@ export default Ember.Component.extend({
       continuous: false,
       enabled: false,
       offset: offset,
-      handler: function(direction) {
-        router && router.replaceWith(routeName, name);
+      handler: function() {
+        if(router){ router.replaceWith(routeName, name); }
       }
     });
     wayPoint.enable();

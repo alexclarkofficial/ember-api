@@ -9,7 +9,9 @@
 
 <div class="meta">
   Defined in
-    <a class="api-file-link" {{bind-attr href=this.codeLocation}}>{{item.file}}:{{item.line}}</a>
+  {{#project-link file=item.file line=item.line class="api-file-link"}}
+      {{item.file}}:{{item.line}}
+  {{/project-link}}
 </div>
 
 <div class="description">

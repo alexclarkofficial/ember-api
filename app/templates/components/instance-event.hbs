@@ -5,10 +5,13 @@
 
 <div class="meta">
   Defined in
-  <a class="api-file-link" href="https://github.com/emberjs/ember.js/tree/5fe2d63/packages/ember-application/lib/system/application.js#L749">
-    {{item.file}}:{{item.line}}
-  </a>
+
+  {{#project-link file=item.file line=item.line class="api-file-link"}}
+      {{item.file}}:{{item.line}}
+  {{/project-link}}
+
 </div>
+
 <div class="description">
   {{{item.description}}}
 </div>
