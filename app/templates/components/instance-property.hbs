@@ -1,0 +1,19 @@
+<h3 class="name anchorable-toc">
+  {{#link-to this.routeName item.name class="toc-anchor"}}{{/link-to}}
+  <code>{{item.name}}</code>
+</h3>
+
+{{#if isPrivate}}
+  <span class="flag private">private</span>
+{{/if}}
+
+<div class="meta">
+  Defined in
+    <a class="api-file-link" {{bind-attr href=this.codeLocation}}>{{item.file}}:{{item.line}}</a>
+</div>
+
+<div class="description">
+  {{{item.description}}}
+</div>
+
+<p></p>

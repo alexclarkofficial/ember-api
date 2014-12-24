@@ -1,0 +1,42 @@
+<h3 class="name anchorable-toc">
+  {{#link-to this.routeName item.name class="toc-anchor"}}{{/link-to}}
+  <code>{{item.name}}</code>
+</h3>
+
+{{#if method.params}}
+  <span class="args">
+    ({{parameterSentence}})
+  </span>
+{{/if}}
+
+{{#if isPrivate}}
+  <span class="flag private">private</span>
+{{/if}}
+
+<div class="meta">
+  Defined in
+    <a class="api-file-link" href="https://github.com/emberjs/ember.js/tree/5fe2d63/packages/ember-application/lib/system/application.js#L551">{{item.file}}:{{item.line}}</a>
+</div>
+
+<div class="description">
+  {{{item.description}}}
+</div>
+
+<p></p>
+
+<div class="params">
+  {{#if item.parameters}}
+    <h3>Parameters:</h3>
+    <dl>
+      {{#each param in item.parameters}}
+        <dt>
+          <strong>{{param.name}}</strong>
+          <span class="type">{{param.type}}</span>
+        </dt>
+        <dd>
+          {{param.description}}
+        </dd>
+      {{/each}}
+    </dl>
+  {{/if}}
+</div>

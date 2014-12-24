@@ -7,8 +7,10 @@
 
 
 <div class="class-info">
-  <p>Extends: <a href="/api/classes/Ember.Namespace.html">{{model.extends}}</a></p>
-  <p>Defined in: <a class="api-file-link" href="https://github.com/emberjs/ember.js/tree/5fe2d63/packages/ember-application/lib/system/application.js#L56">{{model.location}}</a></p>
+  {{#if model.extends}}
+    <p>Extends: <a href="/api/classes/Ember.Namespace.html">{{model.extends}}</a></p>
+  {{/if}}
+  <p>Defined in: <a class="api-file-link" href="https://github.com/emberjs/ember.js/tree/5fe2d63/packages/ember-application/lib/system/application.js#L56">{{model.file}}:{{model.line}}</a></p>
   <p>Module: <a href="/api/modules/ember-application.html">{{model.module}}</a></p>
 </div>
 

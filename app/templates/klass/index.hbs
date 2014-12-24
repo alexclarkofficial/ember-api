@@ -5,7 +5,9 @@
   <!-- todo: private, protected, inherited, and deprecated states -->
   {{#each method in model.methods}}
     <li class="method">
-      <a href="#method__initialize">{{method.name}}</a>
+      {{#link-to 'klass.methods.method' method.name}}
+        {{method.name}}
+      {{/link-to}}
     </li>
   {{/each}}
 </ul>
@@ -19,7 +21,9 @@
   <!-- todo: private, protected, inherited, and deprecated states -->
   {{#each property in model.properties}}
     <li class="property">
-      <a href="#property_concatenatedProperties">{{property.name}}</a>
+      {{#link-to 'klass.properties.property' property.name}}
+        {{property.name}}
+      {{/link-to}}
     </li>
   {{/each}}
 </ul>
@@ -31,7 +35,9 @@
 <ul class="index-list">
   {{#each event in model.events}}
     <li class="event ">
-      <a href="#event_ready">{{event.name}}</a>
+      {{#link-to 'klass.events.event' event.name}}
+        {{event.name}}
+      {{/link-to}}
     </li>
   {{/each}}
 </ul>

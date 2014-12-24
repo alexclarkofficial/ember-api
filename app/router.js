@@ -11,9 +11,15 @@ Router.map(function() {
 
   this.resource('klass', {path: '/class/:classId'}, function(){
     this.route('index', {path: '/'});
-    this.route('methods');
-    this.route('properties');
-    this.route('events');
+    this.route('methods', function(){
+      this.route('method', {path: '/:methodId'});
+    });
+    this.route('properties', function(){
+      this.route('property', {path: '/:propertyId'});
+    });
+    this.route('events', function(){
+      this.route('event', {path: '/:eventId'});
+    });
   });
 });
 
