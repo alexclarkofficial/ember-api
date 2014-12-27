@@ -2788,36 +2788,36 @@ body.guides .highlight {
 .CodeRay td.code {
     padding: 8px 0 8px 13px
 }
-.CodeRay .tag {
+.CodeRay .hljs-tag {
     color: #1f58ce
 }
-.CodeRay .comment {
+.CodeRay .hljs-comment {
     color: #777777
 }
-.CodeRay .attribute-name {
+.CodeRay .hljs-attribute-name {
     color: #1f58ce
 }
-.CodeRay .content {
+.CodeRay .hljs-content {
     color: #153c8c
 }
-.CodeRay .string {
+.CodeRay .hljs-string {
     color: #1f58ce
 }
-.CodeRay .keyword {
+.CodeRay .hljs-keyword {
     color: #ce791f
 }
-.CodeRay .key, .CodeRay .function {
+.CodeRay .hljs-key, .CodeRay .hljs-function {
     color: #2b1fce
 }
-.CodeRay .local-variable {
+.CodeRay .hljs-local-variable {
     color: #1f58ce
 }
-.handlebars .CodeRay .inline, .handlebars .CodeRay .inline .inline-delimiter, .handlebars .CodeRay .inline .delimiter {
+.handlebars .CodeRay .hljs-inline, .handlebars .CodeRay .inline .hljs-inline-delimiter, .handlebars .CodeRay .inline .hljs-delimiter {
     color: #00aa00
 }
-.handlebars .CodeRay .inline .attribute-name {
+.handlebars .CodeRay .inline .hljs-attribute-name {
     color: #007700
 }
-.handlebars .CodeRay .inline .attribute-value, .handlebars .CodeRay .inline .content {
+.handlebars .CodeRay .inline .hljs-attribute-value, .handlebars .CodeRay .inline .hljs-content {
     color: #004400
 }
