@@ -121,6 +121,8 @@ var items = Object.keys(yuidoc['classes']).map(function(className){
   klassJSON.properties = [];
   klassJSON.events = [];
   klassJSON.isPrivate = klassJSON.access === 'private';
+  klassJSON.constType = klassJSON.static ? 'Namespace' : 'Class';
+
 
   // find this class by name
   var klass = Klass.find(className);
