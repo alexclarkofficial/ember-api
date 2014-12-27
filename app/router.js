@@ -6,7 +6,6 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('namespace', {path: '/namespace/:namespaceId'});
   this.resource('module', {path: '/module/:moduleId'});
 
   this.resource('klass', {path: '/class/:classId'}, function(){

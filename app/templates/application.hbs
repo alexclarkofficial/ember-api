@@ -30,8 +30,8 @@
       <a href="#">Namespaces</a>
         <ol>
           {{#each namespace in model.namespaces}}
-            {{#link-to 'namespace' namespace.name tagName='li' class='level-3'}}
-              {{#link-to 'namespace' namespace.name}}{{namespace.name}}{{/link-to}}
+            {{#link-to 'klass' namespace.name tagName='li' class='level-3'}}
+              {{#link-to 'klass' namespace.name}}{{namespace.name}}{{/link-to}}
             {{/link-to}}
           {{/each}}
         </ol>
