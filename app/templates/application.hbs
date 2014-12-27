@@ -73,9 +73,11 @@
         </ol>
       </li>
 
-      <div id="back-to-top">
-        <a id="back-top-top" href="#">⬆ Back to Top</a>
-      </div>
+      {{#if view.returnToTopLinkVisible}}
+        <div id="back-to-top">
+          <a href="#" {{action "scrollToTop" target=view}}>⬆ Back to Top</a>
+        </div>
+      {{/if}}
     </ol>
   </div>
 

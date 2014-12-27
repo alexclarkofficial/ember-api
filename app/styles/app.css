@@ -1316,11 +1316,14 @@ p {
 #sidebar #back-to-top {
     padding-left: 13px;
     text-align: center;
-    display: none;
     -moz-transition: opacity 0.05s linear;
     -o-transition: opacity 0.05s linear;
     -webkit-transition: opacity 0.05s linear;
-    transition: opacity 0.05s linear
+    transition: opacity 0.05s linear;
+    position: fixed;
+    top: 20px;
+    left: 0px;
+    display: block;
 }
 @media screen and (max-width: 1200px) {
     #sidebar #back-to-top {
