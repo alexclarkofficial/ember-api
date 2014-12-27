@@ -1,51 +1,29 @@
-# Api-emberjs-com
+# Versioned API Browser
+This Ember Application allows you to browse API docs
 
-This README outlines the details of collaborating on this Ember application.
+# Setup
 
-A short introduction of this app could easily go here.
+1. Install Dependencies
 
-## Prerequisites
+  ```shell
+  npm install && bower install
+  ```
 
-You will need the following things properly installed on your computer.
+1. Generate Documentation JSON
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM) and [Bower](http://bower.io/)
+  ```shell
+  mkdir -p tasks/docs
+  node tasks/genereate-docs.js
+  ```
 
-## Installation
+1. Start the app
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
+  ```shell
+  ember server
+  ```
 
-## Running / Development
-
-* `ember server`
-* Visit your app at http://localhost:4200.
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* ember: http://emberjs.com/
-* ember-cli: http://www.ember-cli.com/
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
+1. View the app
+  
+  ```shell
+  open http://0.0.0.0:4200
+  ```
