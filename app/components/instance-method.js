@@ -1,4 +1,6 @@
 import InstanceItemComponent from "./instance-item";
+import Ember from 'ember';
+
 var get = Ember.get;
 
 export default InstanceItemComponent.extend({
