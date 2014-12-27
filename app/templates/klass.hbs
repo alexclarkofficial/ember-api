@@ -33,23 +33,29 @@
         {{/link-to}}
       {{/link-to}}
 
-      {{#link-to 'klass.methods' tagName='li'}}
-        {{#link-to 'klass.methods'}}
-          Methods
+      {{#if model.methods}}
+        {{#link-to 'klass.methods' tagName='li'}}
+          {{#link-to 'klass.methods'}}
+            Methods
+          {{/link-to}}
         {{/link-to}}
-      {{/link-to}}
+      {{/if}}
 
-      {{#link-to 'klass.properties' tagName='li'}}
-        {{#link-to 'klass.properties'}}
-          Properties
+      {{#if model.properties}}
+        {{#link-to 'klass.properties' tagName='li'}}
+          {{#link-to 'klass.properties'}}
+            Properties
+          {{/link-to}}
         {{/link-to}}
-      {{/link-to}}
+      {{/if}}
 
-      {{#link-to 'klass.events' tagName='li'}}
-        {{#link-to 'klass.events'}}
-          Events
+      {{#if model.events}}
+        {{#link-to 'klass.events' tagName='li'}}
+          {{#link-to 'klass.events'}}
+            Events
+          {{/link-to}}
         {{/link-to}}
-      {{/link-to}}
+      {{/if}}
     </ul>
     <div class="pane" id="index" style="display: block;">
       <div id="api-options">

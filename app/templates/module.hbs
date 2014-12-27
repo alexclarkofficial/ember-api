@@ -1,0 +1,39 @@
+<h1 class="api-header">{{model.name}} Module</h1>
+
+<hr>
+
+
+
+<p>
+<p>
+  Requires: <a href="/api/modules/ember-views.html">ember-views</a>,
+  <a href="/api/modules/ember-routing.html">ember-routing</a>
+</p>
+  </p>
+<p>{{model.name}}</p>
+<p></p>
+
+{{#if model.submodules}}
+  <h2>Submodules</h2>
+  <ul>
+    {{#each submodules in model.submodules}}
+      <li>
+        {{#link-to 'module' submodule.name}}
+          {{submodule.name}}
+        {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+{{/if}}
+
+<h2>Classes and Namespaces</h2>
+<ul>
+  {{#each klass in model.classes}}
+    <li>
+      {{#link-to 'klass' klass.name}}
+        {{klass.name}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
+

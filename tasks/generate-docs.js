@@ -99,21 +99,31 @@ var items = Object.keys(yuidoc['classes']).map(function(className){
         1.x.x/
           Ember.SomeClass.json
 
-  */
-  fs.writeFileSync(directory + '.json', toJSON(yuidoc['classes'][className]))
+    ```Ember.SomeClass.json
+    {
+      isPrivate: false,
+      description: "<p>some html</p>",
+      extends: "Ember.Object",
+      file: "packages/ember-runtime/lib/system/each_proxy.js",
+      line: 94,
+      module: "ember",
+      name: "Ember.EachProxy",
+      submodule: "ember-runtime"
+      methods: [],
+      properties: [],
+      events: []
+    }
+    ```
 
-  // create the `Ember.SomeClass/` directory for additional detailed json files
-  fs.mkdirSync(directory);
+  */
+  var klassJSON = yuidoc['classes'][className];
+  klassJSON.methods = [];
+  klassJSON.properties = [];
+  klassJSON.events = [];
+  klassJSON.isPrivate = klassJSON.access === 'private';
 
   // find this class by name
   var klass = Klass.find(className);
-
-  var indexJSON = {
-    methods: [],
-    properties: [],
-    events: []
-  }
-
   klass.items().forEach(function(item){
     var json = {
       name: item.name,
@@ -123,26 +133,21 @@ var items = Object.keys(yuidoc['classes']).map(function(className){
 
     switch (item.itemtype) {
       case "property":
-        indexJSON.properties.push(json)
+        klassJSON.properties.push(json)
         break;
       case "method":
-        indexJSON.methods.push(json)
+        klassJSON.methods.push(json)
         break;
       case "event":
-        indexJSON.events.push(json)
+        klassJSON.events.push(json)
         break;
     }
   });
 
-  /*
-      Write the index file for the class:
-        s3-bucket/
-          1.x.x/
-            Ember.SomeClass/
-              index.json
+  fs.writeFileSync(directory + '.json', toJSON(yuidoc['classes'][className]))
 
-  */
-  fs.writeFileSync(directory + '/index.json', toJSON(indexJSON));
+  // create the `Ember.SomeClass/` directory for additional detailed json files
+  fs.mkdirSync(directory);
 
   /*
       Write the methods, properties, events files:
@@ -163,3 +168,34 @@ var items = Object.keys(yuidoc['classes']).map(function(className){
   });
 });
 
+/*
+  Write the module files:
+    s3-bucket/
+      1.x.x/
+        modules/
+          some-module.json
+
+
+  ```some-module.json
+    {
+      name: 'some-module',
+      description: '<p>some paresed markdown</p>'
+      submodules: [{name: 'another-module'}, ...],
+      classes: [{name: 'Namesapce.SomeClass'}, ...]
+      requires: [{name: 'some-other-module'}, ...]
+
+    }
+  ```
+
+*/
+fs.mkdirSync(__dirname + '/docs/modules');
+eachValue(yuidoc['modules'], function(module){
+  var directory = __dirname + '/docs/modules';
+  var json = {
+    name: module.name,
+    classes: Object.keys(module.classes).sort().map(function(name) { return {name: name}}),
+    submodules: Object.keys(module.classes).sort().map(function(name) { return {name: name}}),
+    requires: (module.requires ||[]).sort().map(function(name) { return {name: name}})
+  }
+  fs.writeFileSync(directory + '/' + module.name + '.json', toJSON(json));
+});

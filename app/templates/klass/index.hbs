@@ -1,41 +1,47 @@
-<h2>Methods</h2>
+{{#if model.methods}}
+  <h2>Methods</h2>
+
+  <p></p>
+  <ul class="index-list">
+    {{#each method in model.methods}}
+      <li class="method">
+        {{#link-to 'klass.methods.method' method.name}}
+          {{method.name}}
+        {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
 
 <p></p>
-<ul class="index-list">
-  {{#each method in model.methods}}
-    <li class="method">
-      {{#link-to 'klass.methods.method' method.name}}
-        {{method.name}}
-      {{/link-to}}
-    </li>
-  {{/each}}
-</ul>
+{{/if}}
 
-<p></p>
+{{#if model.properties}}
+  <h2>Properties</h2>
+  <p></p>
 
-<h2>Properties</h2>
-<p></p>
+  <ul class="index-list">
+    {{#each property in model.properties}}
+      <li class="property">
+        {{#link-to 'klass.properties.property' property.name}}
+          {{property.name}}
+        {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+  <p></p>
+{{/if}}
 
-<ul class="index-list">
-  {{#each property in model.properties}}
-    <li class="property">
-      {{#link-to 'klass.properties.property' property.name}}
-        {{property.name}}
-      {{/link-to}}
-    </li>
-  {{/each}}
-</ul>
-<p></p>
+{{#if model.events}}
+  <h2>Events</h2>
 
-<h2>Events</h2>
-
-<p></p>
-<ul class="index-list">
-  {{#each event in model.events}}
-    <li class="event ">
-      {{#link-to 'klass.events.event' event.name}}
-        {{event.name}}
-      {{/link-to}}
-    </li>
-  {{/each}}
-</ul>
+  <p></p>
+  <ul class="index-list">
+    {{#each event in model.events}}
+      <li class="event ">
+        {{#link-to 'klass.events.event' event.name}}
+          {{event.name}}
+        {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+{{/if}}
