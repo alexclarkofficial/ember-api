@@ -57,23 +57,24 @@
         {{/link-to}}
       {{/if}}
     </ul>
+
     <div class="pane" id="index" style="display: block;">
       <div id="api-options">
         Show:
         <label>
-          <input type="checkbox" data-type="inherited">
+          {{evented-checkbox action='updateFilter' value='inherited' checked=this.inherited}}
           Inherited
         </label>
         <label>
-          <input type="checkbox" data-type="protected">
+          {{evented-checkbox action='updateFilter' value='protected' checked=this.protected}}
           Protected
         </label>
         <label>
-          <input type="checkbox" data-type="private">
+          {{evented-checkbox action='updateFilter' value='private' checked=this.private}}
           Private
         </label>
         <label>
-          <input type="checkbox" data-type="deprecated">
+          {{evented-checkbox action='updateFilter' value='deprecated' checked=this.deprecated}}
           Deprecated
         </label>
       </div>

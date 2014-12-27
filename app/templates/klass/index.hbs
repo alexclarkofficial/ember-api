@@ -4,11 +4,15 @@
   <p></p>
   <ul class="index-list">
     {{#each method in model.methods}}
-      <li class="method">
-        {{#link-to 'klass.methods.method' method.name}}
-          {{method.name}}
-        {{/link-to}}
-      </li>
+      {{instance-item-list-item
+        type="method"
+        route-name="klass.methods.method"
+        item=method
+        show-private=this.private
+        show-protected=this.protected
+        show-deprecated=this.deprecated
+        show-inherited=this.inherited
+      }}
     {{/each}}
   </ul>
 
@@ -21,11 +25,15 @@
 
   <ul class="index-list">
     {{#each property in model.properties}}
-      <li class="property">
-        {{#link-to 'klass.properties.property' property.name}}
-          {{property.name}}
-        {{/link-to}}
-      </li>
+      {{instance-item-list-item
+        type="property"
+        route-name="klass.properties.property"
+        item=property
+        show-private=this.private
+        show-protected=this.protected
+        show-deprecated=this.deprecated
+        show-inherited=this.inherited
+      }}
     {{/each}}
   </ul>
   <p></p>
@@ -37,11 +45,15 @@
   <p></p>
   <ul class="index-list">
     {{#each event in model.events}}
-      <li class="event ">
-        {{#link-to 'klass.events.event' event.name}}
-          {{event.name}}
-        {{/link-to}}
-      </li>
+      {{instance-item-list-item
+        type="event"
+        route-name="klass.events.event"
+        item=event
+        show-private=this.private
+        show-protected=this.protected
+        show-deprecated=this.deprecated
+        show-inherited=this.inherited
+      }}
     {{/each}}
   </ul>
 {{/if}}

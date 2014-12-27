@@ -1,3 +1,7 @@
 {{#each event in model}}
-  {{instance-event item=event}}
+  {{instance-event item=event
+    show-private=this.private
+    show-protected=this.protected
+    show-deprecated=this.deprecated
+    show-inherited=this.inherited}}
 {{/each}}

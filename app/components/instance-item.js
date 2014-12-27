@@ -1,7 +1,12 @@
 import Ember from "ember";
 var alias = Ember.computed.alias;
-var not = Ember.computed.not;
 var get = Ember.get;
+var observer = Ember.observer;
+var run = Ember.run;
+
+function resetAllWaypoints(){
+  window.Waypoint.refreshAll();
+}
 
 export default Ember.Component.extend({
   item: null,
@@ -14,7 +19,30 @@ export default Ember.Component.extend({
   isPrivate: alias('item.isPrivate'),
   classNames: ['property', 'item-entry'],
   classNameBindings: ['isPrivate:private'],
-  isVisible: not('isPrivate'),
+  isVisible: function(){
+    if (get(this, 'item.isPrivate') && !get(this, 'show-private')) {
+      return false;
+    }
+
+    if (get(this, 'item.inheritedFrom') && !get(this, 'show-inherited')) {
+      return false;
+    }
+
+    if (get(this, 'item.isProtected') && !get(this, 'show-protected')) {
+      return false;
+    }
+
+    if (get(this, 'item.isDeprecated') && !get(this, 'show-deprecated')) {
+      return false;
+    }
+
+    return true;
+  }.property('show-private', 'show-protected', 'show-deprecated',
+             'show-inherited', 'item.isPrivate', 'item.isProtected',
+             'item.inheritedFrom', 'item.isDeprecated'),
+  _visibilityChanged: observer('isVisible', function() {
+    run.scheduleOnce('afterRender', this, resetAllWaypoints);
+  }),
   /**
     The URL where you cand find the code for this property on github.
     TODO: don't link to blob/master,
@@ -43,16 +71,16 @@ export default Ember.Component.extend({
   },
 
   didInsertElement: function(){
-    if(!this.get('isVisible')){ return; }
-
     var router = get(this, 'router');
     var name = get(this, 'item.name');
     var element = this.get('element');
     var offset = 20;
     var routeName = get(this, 'routeName');
 
-    if(router.isActive(routeName, name)) {
-      window.scrollTo(0, this.$().offset().top - offset);
+    if(this.get('isVisible')){
+      if(router.isActive(routeName, name)) {
+        window.scrollTo(0, this.$().offset().top - offset);
+      }
     }
 
     var wayPoint = new window.Waypoint({
