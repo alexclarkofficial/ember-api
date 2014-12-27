@@ -1,58 +1,108 @@
-<div id="sidebar">
-  <ol id="toc-list">
-    <li class="level-1">
-      <a href="#">Projects</a>
-      <ol>
-        <li class="level-3 sub-selected">
-          <a href="/api">Ember</a>
-        </li>
-        <li class="level-3 ">
-          <a href="/api/data">Ember Data</a>
-        </li>
-      </ol>
-    </li>
+<div id="header">
+  <div id="wrapper">
+    <a id="logo" href="/">&nbsp;</a>
+    <ul id="nav">
+      <li><a href="/about">about</a></li>
+      <li><a href="/guides">guides</a></li>
+      <li class="active"><a href="/api">api</a></li>
+      <li><a href="/community">community</a></li>
+      <li><a href="/blog">blog</a></li>
+      <li><a href="/builds">builds</a></li>
+      <li id="search">
+        <form>
+          <input type="text" id="st-search-input" class="st-search-input" autocomplete="off" autocorrect="off" autocapitalize="off" style="outline: none;">
+        </form>
+        <div id="st-results-container"></div>
+      </li>
+    </ul>
 
-    <li class="level-1">
-      <a href="https://github.com/emberjs/ember.js/commits/5fe2d63" target="_blank"> Tag: 5fe2d63</a>
-    </li>
+    <div id="github">
+      <a href="https://github.com/emberjs/ember.js"><i class="icon-fork"></i>Fork Us!</a>
+    </div>
+  </div>
+</div>
 
-    <li class="level-1 selected">
-      <a href="#">Modules</a>
-      <ol class="selected">
-        {{#each module in model.modules}}
-          {{#link-to 'module' module.name tagName='li' class='level-3'}}
-            {{#link-to 'module' module.name}}{{module.name}}{{/link-to}}
-          {{/link-to}}
-        {{/each}}
-      </ol>
-    </li>
-    <li class="level-1 ">
-      <a href="#">Namespaces</a>
+
+<div id="content-wrapper">
+  <div id="sidebar">
+    <ol id="toc-list">
+      <li class="level-1">
+        <a href="#">Projects</a>
         <ol>
-          {{#each namespace in model.namespaces}}
-            {{#link-to 'klass' namespace.name tagName='li' class='level-3'}}
-              {{#link-to 'klass' namespace.name}}{{namespace.name}}{{/link-to}}
+          <li class="level-3 sub-selected">
+            <a href="/api">Ember</a>
+          </li>
+          <li class="level-3 ">
+            <a href="/api/data">Ember Data</a>
+          </li>
+        </ol>
+      </li>
+
+      <li class="level-1">
+        <a href="https://github.com/emberjs/ember.js/commits/5fe2d63" target="_blank"> Tag: 5fe2d63</a>
+      </li>
+
+      <li class="level-1 selected">
+        <a href="#">Modules</a>
+        <ol class="selected">
+          {{#each module in model.modules}}
+            {{#link-to 'module' module.name tagName='li' class='level-3'}}
+              {{#link-to 'module' module.name}}{{module.name}}{{/link-to}}
             {{/link-to}}
           {{/each}}
         </ol>
+      </li>
+      <li class="level-1 ">
+        <a href="#">Namespaces</a>
+          <ol>
+            {{#each namespace in model.namespaces}}
+              {{#link-to 'klass' namespace.name tagName='li' class='level-3'}}
+                {{#link-to 'klass' namespace.name}}{{namespace.name}}{{/link-to}}
+              {{/link-to}}
+            {{/each}}
+          </ol>
 
-    <li class="level-1 ">
-      <a href="#">Classes</a>
-      <ol class="">
-        {{#each klass in classes}}
-          {{#link-to 'klass' klass.name tagName='li' class='level-3'}}
-            {{#link-to 'klass' klass.name}}{{klass.name}}{{/link-to}}
-          {{/link-to}}
-        {{/each}}
-      </ol>
-    </li>
+      <li class="level-1 ">
+        <a href="#">Classes</a>
+        <ol class="">
+          {{#each klass in classes}}
+            {{#link-to 'klass' klass.name tagName='li' class='level-3'}}
+              {{#link-to 'klass' klass.name}}{{klass.name}}{{/link-to}}
+            {{/link-to}}
+          {{/each}}
+        </ol>
+      </li>
 
-    <div id="back-to-top">
-      <a id="back-top-top" href="#">⬆ Back to Top</a>
-    </div>
-  </ol>
+      <div id="back-to-top">
+        <a id="back-top-top" href="#">⬆ Back to Top</a>
+      </div>
+    </ol>
+  </div>
+
+  <div id="content" class="has-sidebar">
+    {{outlet}}
+  </div>
 </div>
 
-<div id="content" class="has-sidebar">
-  {{outlet}}
+
+<div id="footer">
+  <div id="footer-wrapper">
+    <div class="info">
+      Copyright 2014 <a href="http://tilde.io">Tilde Inc.</a><br>
+      <a href="/team">Core Team</a> | <a href="/sponsors">Sponsors</a> | <a href="/legal">Legal</a><br>
+      <a href="/guidelines">Community Guidelines</a>
+    </div>
+    <div class="statement">Ember.js is free, open source and always will be.</div>
+    <div class="links">
+      <a class="twitter" href="http://twitter.com/emberjs">
+        <i class="icon-twitter"></i><span>Twitter</span>
+      </a>
+      <a class="github" href="https://github.com/emberjs/ember.js">
+        <i class="icon-github"></i><span>GitHub</span>
+      </a>
+      <a class="googleplus" href="https://plus.google.com/communities/106387049790387471205">
+        <i class="icon-gplus"></i><span>Google+</span>
+      </a>
+    </div>
+  </div>
 </div>
