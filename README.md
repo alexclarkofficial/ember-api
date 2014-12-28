@@ -6,14 +6,7 @@ This Ember Application allows you to browse API docs
 1. Install Dependencies
 
   ```shell
-  npm install && bower install
-  ```
-
-1. Generate Documentation JSON
-
-  ```shell
-  mkdir -p tasks/docs
-  node tasks/genereate-docs.js
+  npm install
   ```
 
 1. Start the app
