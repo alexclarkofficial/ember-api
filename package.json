@@ -9,8 +9,7 @@
   "scripts": {
     "start": "ember server",
     "build": "ember build",
-    "test": "ember test",
-    "postinstall": "bower install && mkdir -p tasks/docs && node tasks/generate-docs.js"
+    "test": "ember test"
   },
   "repository": "https://github.com/stefanpenner/ember-cli",
   "engines": {
