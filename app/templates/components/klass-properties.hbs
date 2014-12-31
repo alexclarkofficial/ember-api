@@ -1,0 +1,9 @@
+{{#each property in model}}
+  {{instance-property item=property
+    show-private=show-private
+    show-protected=show-protected
+    show-deprecated=show-deprecated
+    show-inherited=show-inherited
+    became-active="childBecameActiveWaypoint"
+  }}
+{{/each}}

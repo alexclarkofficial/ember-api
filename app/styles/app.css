@@ -2562,7 +2562,6 @@ a.edit-page:hover {
 .api #api-options {
     padding-bottom: 1em;
     border-bottom: solid 1px #e0e0e0;
-    margin-bottom: 1.5em
 }
 .api .class-info {
     margin-bottom: 2em
@@ -2599,6 +2598,11 @@ a.edit-page:hover {
     font-size: 14px;
     font-weight: bold;
     margin: 0
+}
+
+.api .class-items {
+  margin-top: 1.5em;
+  padding-top: 10px;
 }
 .api ul.index-list {
     margin-left: 1.5em;

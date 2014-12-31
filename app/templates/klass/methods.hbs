@@ -1,8 +1,7 @@
-{{#each method in model}}
-  {{instance-method item=method
+{{klass-methods
+    model=model
     show-private=this.private
     show-protected=this.protected
     show-deprecated=this.deprecated
-    show-inherited=this.inherited}}
-{{/each}}
-
+    show-inherited=this.inherited
+}}

@@ -7,20 +7,16 @@ export default Ember.View.extend({
       window.scrollTo(0,0);
     }
   },
-  didInsertElement: function(){
-    var view = this;
+  observeScrollState: function(){
+    var _this = this;
     new window.Waypoint({
       element: this.element,
       continuous: false,
       offset: 40,
       handler: function(direction) {
-        if (direction === 'down') {
-          view.set('returnToTopLinkVisible', true);
-        }
-        if (direction === 'up') {
-          view.set('returnToTopLinkVisible', false);
-        }
+        var isReturnToTopLinkVisible = direction === 'down';
+        _this.set('returnToTopLinkVisible', isReturnToTopLinkVisible);
       }
     });
-  }
+  }.on('didInsertElement')
 });

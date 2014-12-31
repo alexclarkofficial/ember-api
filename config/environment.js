@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'api-emberjs-com',
+    modulePrefix: 'api',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
