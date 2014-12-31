@@ -13,7 +13,7 @@ This Ember Application allows you to browse API docs
 
   ```shell
   mkdir -p tasks/docs
-  node tasks/genereate-docs.js
+  node tasks/generate-docs.js
   ```
 
 1. Start the app
