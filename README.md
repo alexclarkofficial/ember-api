@@ -10,10 +10,10 @@ This Ember Application allows you to browse API docs.
   npm install && bower install
   ```
 
-1. Start the app with an environemt variable pointing towards a library documented with YUIDoc
+1. Start the app with a lib-dir arguement pointed towards a library documented with YUIDoc
 
   ```shell
-  YUIDOC_LIB_DIR=/path/to/ember.js ember server
+  ember server --lib-dir=/path/to/ember.js
   ```
 
 1. View the app
