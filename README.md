@@ -1,5 +1,6 @@
 # Versioned API Browser
-This Ember Application allows you to browse API docs
+This Ember Application allows you to browse API docs.
+
 
 # Setup
 
@@ -9,17 +10,10 @@ This Ember Application allows you to browse API docs
   npm install && bower install
   ```
 
-1. Generate Documentation JSON
+1. Start the app with an environemt variable pointing towards a library documented with YUIDoc
 
   ```shell
-  mkdir -p tasks/docs
-  node tasks/generate-docs.js
-  ```
-
-1. Start the app
-
-  ```shell
-  ember server
+  YUIDOC_LIB_DIR=/path/to/ember.js ember server
   ```
 
 1. View the app
