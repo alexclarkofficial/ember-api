@@ -49,34 +49,34 @@
 
   <div class="tabs">
     <ul>
-      {{#link-to 'klass.index' tagName='li'}}
+      <li>
         {{#link-to 'klass.index'}}
           Index
         {{/link-to}}
-      {{/link-to}}
+      </li>
 
       {{#if model.methods}}
-        {{#link-to 'klass.methods' tagName='li'}}
+        <li>
           {{#link-to 'klass.methods'}}
-            Methods
-          {{/link-to}}
-        {{/link-to}}
+              Methods
+            {{/link-to}}
+        </li>
       {{/if}}
 
       {{#if model.properties}}
-        {{#link-to 'klass.properties' tagName='li'}}
+        <li>
           {{#link-to 'klass.properties'}}
             Properties
           {{/link-to}}
-        {{/link-to}}
+        </li>
       {{/if}}
 
       {{#if model.events}}
-        {{#link-to 'klass.events' tagName='li'}}
+        <li>
           {{#link-to 'klass.events'}}
             Events
           {{/link-to}}
-        {{/link-to}}
+        </li>
       {{/if}}
     </ul>
 
