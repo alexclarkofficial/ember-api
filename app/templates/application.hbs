@@ -46,9 +46,9 @@
         <a href="#">Modules</a>
         <ol class="selected">
           {{#each module in model.modules}}
-            <li class='level-3'>
+            {{#link-to 'module' module.name tagName='li' class='level-3'}}
               {{#link-to 'module' module.name}}{{module.name}}{{/link-to}}
-            </li>
+            {{/link-to}}
           {{/each}}
         </ol>
       </li>
@@ -56,9 +56,9 @@
         <a href="#">Namespaces</a>
           <ol>
             {{#each namespace in model.namespaces}}
-              <li class='level-3'>
+              {{#link-to 'klass' namespace.name tagName='li' class='level-3'}}
                 {{#link-to 'klass' namespace.name}}{{namespace.name}}{{/link-to}}
-              </li>
+              {{/link-to}}
             {{/each}}
           </ol>
 
@@ -66,9 +66,9 @@
         <a href="#">Classes</a>
         <ol class="">
           {{#each klass in classes}}
-            <li class='level-3'>
+            {{#link-to 'klass' klass.name tagName='li' class='level-3'}}
               {{#link-to 'klass' klass.name}}{{klass.name}}{{/link-to}}
-            </li>
+            {{/link-to}}
           {{/each}}
         </ol>
       </li>
