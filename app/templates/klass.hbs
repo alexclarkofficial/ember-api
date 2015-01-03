@@ -10,14 +10,36 @@
 
 <div class="class-info">
   {{#if model.extends}}
-    <p>Extends: <a href="/api/classes/Ember.Namespace.html">{{model.extends}}</a></p>
+    <p>
+      Extends:
+      {{#link-to 'klass' model.extends}}
+        {{model.extends}}
+      {{/link-to}}
+    </p>
   {{/if}}
+
+  {{#if model.uses}}
+    {{#each use in model.uses}}
+    <p>
+      Uses:
+      {{#link-to 'klass' use}}
+        {{use}}
+      {{/link-to}}
+    </p>
+    {{/each}}
+  {{/if}}
+
   <p>Defined in:
     {{#project-link file=model.file line=model.line class="api-file-link"}}
         {{model.file}}:{{model.line}}
     {{/project-link}}
   </p>
-  <p>Module: <a href="/api/modules/ember-application.html">{{model.module}}</a></p>
+  <p>
+    Module:
+    {{#link-to 'module' model.submodule}}
+      {{model.submodule}}
+    {{/link-to}}
+  </p>
 </div>
 
 <div class="description">

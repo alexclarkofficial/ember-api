@@ -58,6 +58,9 @@ export default Ember.Component.extend(HasWaypoint, {
     @returns String
   */
   codeLocation: function(){
-    return 'https://github.com/emberjs/ember.js/blob/master/%@#L%@'.fmt(get(this, 'item.file'), get(this, 'item.line'));
+    var sha = window.SHA;
+    var url = window.GITHUBURL;
+
+    return '%@/blob/%@/%@#L%@'.fmt(url, sha, get(this, 'item.file'), get(this, 'item.line'));
   }.property('item.file', 'item.line').readOnly()
 });

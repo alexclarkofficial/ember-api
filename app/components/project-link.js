@@ -7,6 +7,9 @@ export default Ember.Component.extend({
   tagName: 'a',
   attributeBindings: ['href'],
   href: function(){
-    return "https://github.com/emberjs/ember.js/tree/5fe2d63/%@#L%@".fmt(get(this, 'file'), get(this, 'line'));
+    var sha = window.SHA;
+    var url = window.GITHUBURL;
+
+    return "%@/tree/%@/%@#L%@".fmt(url, sha, get(this, 'file'), get(this, 'line'));
   }.property('file', 'line')
 });
