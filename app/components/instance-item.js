@@ -1,5 +1,6 @@
 import Ember from "ember";
 import HasWaypoint from "../mixins/views/has-waypoint";
+import config from '../config/environment';
 
 var alias = Ember.computed.alias;
 var get = Ember.get;
@@ -58,9 +59,6 @@ export default Ember.Component.extend(HasWaypoint, {
     @returns String
   */
   codeLocation: function(){
-    var sha = window.SHA;
-    var url = window.GITHUBURL;
-
-    return '%@/blob/%@/%@#L%@'.fmt(url, sha, get(this, 'item.file'), get(this, 'item.line'));
+    return '%@/blob/%@/%@#L%@'.fmt(config.githubUrl, config.sha, get(this, 'item.file'), get(this, 'item.line'));
   }.property('item.file', 'item.line').readOnly()
 });

@@ -4,7 +4,10 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'api',
     environment: environment,
-    baseURL: '/',
+    //baseURL is set as part of yuidoc-converter
+    // and will equal the revision you are targeting.
+    // e.g. v1.8.2
+    // baseURL:
     locationType: 'auto',
     EmberENV: {
       FEATURES: {

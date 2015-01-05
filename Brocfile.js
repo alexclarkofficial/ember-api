@@ -4,9 +4,9 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
 app.import('bower_components/waypoints/lib/noframework.waypoints.js');
-if (app.env === 'development') {
-  app.import('bower_components/waypoints/lib/waypoints.debug.js');
-}
+// if (app.env === 'development') {
+//   app.import('bower_components/waypoints/lib/waypoints.debug.js');
+// }
 
 // Use `app.import` to add additional libraries to the generated
 // output files.

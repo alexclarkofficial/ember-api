@@ -1,9 +1,10 @@
 import Ember from "ember";
 import ajax from "ic-ajax";
+import config from '../config/environment';
 
 export default Ember.Route.extend({
   model: function(params){
-    return ajax('/docs/modules/' + params.moduleId + '.json');
+    return ajax('/%@/docs/modules/%@.json'.fmt(config.baseURL, params.moduleId));
   },
   afterModel: function(){
     // megajank. View#willDestroyElement is scheduled after
