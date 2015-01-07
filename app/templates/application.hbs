@@ -29,17 +29,17 @@
       <li class="level-1">
         <a href="#">Projects</a>
         <ol>
-          <li class="level-3 sub-selected">
-            <a href="/api">Ember</a>
-          </li>
-          <li class="level-3 ">
-            <a href="/api/data">Ember Data</a>
-          </li>
+          {{#each library in model.libraries}}
+           <li class="level-3">
+              <a {{bind-attr href=library.slug}}>{{library.name}}</a>
+            </li>
+          {{/each}}
         </ol>
       </li>
 
       <li class="level-1">
         <a {{bind-attr href=githubHREF}} target="_blank"> Tag: {{rev}}</a>
+        {{evented-select content=model.versions action="versionChanged"}}
       </li>
 
       <li class="level-1 selected">
