@@ -15,6 +15,9 @@ This Ember Application allows you to browse API docs.
   * `lib-dir` (path) local path to the library documented with YUIDoc
   e.g. `/usr/yourname/code/ember.js`
 
+  * `project-name` (string, default `''`) the name of the project you're documenting.
+  this becomes the project's slug for urls: e.g. `ember.js` becomes `/ember.js/v1.9.0`
+
   * `default-index` (string) name of the class you'd like to redirect to
   when someone visits the root (`/`) of the documentation. e.g. `Ember`
 
@@ -41,3 +44,4 @@ This Ember Application allows you to browse API docs.
   ```shell
   open http://0.0.0.0:4200
   ```
+
