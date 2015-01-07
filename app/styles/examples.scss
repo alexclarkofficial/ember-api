@@ -1,6 +1,11 @@
 // @import "compass/css3";
-@import "solarized_light.css  ";
+@import "solarized-light.css";
 @import "mixins/hidpi";
+@import "mixins/prefixes";
+@import "css3/border-radius";
+@import "css3/transform";
+@import "css3/background";
+
 
 /* The CSS in this file is for the inline examples on the home page.  */
 
@@ -92,8 +97,8 @@
 
 .example-viewer .example-highlight {
   margin-top:0;
-  @include border-top-left-radius(0);
-  @include border-top-right-radius(0);
+  @include border-top-radius(0);
+  @include border-top-radius(0);
   border-top:0;
   border-left: 1px solid #e0e0e0;
   border-right: 1px solid #e0e0e0;
