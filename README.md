@@ -15,6 +15,9 @@ This Ember Application allows you to browse API docs.
   * `lib-dir` (path) local path to the library documented with YUIDoc
   e.g. `/usr/yourname/code/ember.js`
 
+  * `execution-dir` (path, default `lib-dir`) local path to the directory where `yuidoc` should 
+  execute: e.g. `'/usr/yourname/code/ember.js/docs'`
+
   * `project-name` (string, default `''`) the name of the project you're documenting.
   this becomes the project's slug for urls: e.g. `ember.js` becomes `/ember.js/v1.9.0`
 
@@ -36,7 +39,15 @@ This Ember Application allows you to browse API docs.
   * `github-url (url) github url of the project, no trailing slash: e.g. 'https://github.com/emberjs/ember.js'
 
   ```shell
-  ember server --lib-dir=/path/to/ember.js --default-index=Ember --default-module=ember --rev=v1.0.0
+  ember server \
+    --lib-dir=/Users/trek/Development/ember/ember.js \
+    --default-index=Ember \
+    --default-module=ember \
+    --github-url=https://github.com/emberjs/ember.js \
+    --rev=v1.6.0 \
+    --environment=production \
+    --project-name=ember.js \
+    --execution-dir=/Users/trek/Development/ember/ember.js/docs 
   ```
 
 1. View the app
