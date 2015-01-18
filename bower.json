@@ -13,6 +13,6 @@
     "ember-qunit": "0.1.8",
     "ember-qunit-notifications": "0.0.4",
     "qunit": "~1.15.0",
-    "waypoints": "~3.0.1"
+    "waypoints": "git@github.com:lsthornt/waypoints.git#f6c85070e10458b"
   }
 }
