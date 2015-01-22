@@ -357,7 +357,7 @@ p {
   top: 0;
   height: 60px;
   background: $orange-color top center;
-  @include retina-image('../assets/images/navigation_background', png);
+  @include hidpi('../assets/images/navigation_background', png);
   border-bottom: 1px solid #aa412f;
   z-index: 10; /* The header is on top to have proper drop-shadow. */
   @include box-shadow(rgba(0, 0, 0, 0.3) 0 0 3px);
@@ -376,7 +376,7 @@ p {
     top: 6px;
     width: 103px;
     height: 40px;
-    @include retina-image('../assets/images/ember_logo','png');
+    @include hidpi('../assets/images/ember_logo','png');
     @include transform(scale(1));
     @include transition(0.2s);
 
@@ -556,7 +556,7 @@ p {
   white-space: nowrap;
   text-indent: 100%;
   border-bottom: none;
-  @include retina-image('../assets/images/about/header-text', png);
+  @include hidpi('../assets/images/about/header-text', png);
 }
 
 #download {
@@ -687,7 +687,7 @@ p {
       .bx-prev,
       .bx-next {
         background: no-repeat;
-        @include retina-image('../assets/images/about/carousel_controls', png);
+        @include hidpi('../assets/images/about/carousel_controls', png);
         float: left;
         height: 28px;
         width: 30px;
@@ -725,7 +725,7 @@ p {
       .bx-pager {
         @include clearfix;
         background: bottom repeat-x #f4f4f4;
-        @include retina-image('../assets/images/about/carousel_pager_bg', png);
+        @include hidpi('../assets/images/about/carousel_pager_bg', png);
         border-left: 1px solid #fafafa;
         border-right: 1px solid #fafafa;
         border-top: 1px solid #fefefe;
@@ -738,7 +738,7 @@ p {
 
         .pager-link {
           background: 0 0 no-repeat;
-          @include retina-image('../assets/images/about/carousel_dots', png);
+          @include hidpi('../assets/images/about/carousel_dots', png);
           height: 11px;
           width: 10px;
           margin-left: 10px;
@@ -1090,7 +1090,7 @@ body.community #content {
   .section {
     width: auto;
     div {
-      @include retina-image('../assets/images/community/give', 'png');
+      @include hidpi('../assets/images/community/give', 'png');
       float: left;
       margin: 0 20px 15px 0;
       width: 220px;
@@ -1098,11 +1098,11 @@ body.community #content {
     }
 
     .sos {
-      @include retina-image('../assets/images/community/sos', 'png');
+      @include hidpi('../assets/images/community/sos', 'png');
     }
 
     .bug {
-      @include retina-image('../assets/images/community/bug', 'png');
+      @include hidpi('../assets/images/community/bug', 'png');
     }
     &.bugs div {
       float: right;
@@ -1111,10 +1111,10 @@ body.community #content {
     .meetup {
       width: 221px;
       height: 185px;
-      @include retina-image('../assets/images/community/meetup', 'png');
+      @include hidpi('../assets/images/community/meetup', 'png');
     }
     .campster {
-      @include retina-image('../assets/images/community/campster', 'png');
+      @include hidpi('../assets/images/community/campster', 'png');
       width: 201px;
       height: 179px;
     }

@@ -12,7 +12,7 @@ $hidpi-min-pixel-ratio: 1.3 !default;
   text-decoration: none !important;
   text-indent: -99999px;
 
-  @include retina-image('../assets/images/about/job-board-banner', png);
+  @include hidpi('../assets/images/about/job-board-banner', 'png');
 
   &:hover {
     border-bottom: none;
@@ -44,19 +44,19 @@ body.index, body.about {
   }
 
   .feature .handlebars {
-    @include retina-image('../assets/images/about/ember-handlebars-sm', 'png');
+    @include hidpi('../assets/images/about/ember-handlebars-sm', 'png');
     width: 221px;
     height: 177px;
   }
 
   .feature .structure {
-    @include retina-image('../assets/images/about/ember-structure-sm', 'png');
+    @include hidpi('../assets/images/about/ember-structure-sm', 'png');
     width: 193px;
     height: 184px;
   }
 
   .feature .productivity {
-    @include retina-image('../assets/images/about/ember-productivity-sm', 'png');
+    @include hidpi('../assets/images/about/ember-productivity-sm', 'png');
     width: 221px;
     height: 184px;
   }

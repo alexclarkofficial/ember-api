@@ -38,13 +38,13 @@ body.guides .highlight {
   }
 
   &.javascript .ribbon, &.js .ribbon {
-    @include retina-image('../assets/images/js-ribbon', png);
+    @include hidpi('../assets/images/js-ribbon', png);
   }
   &.html .ribbon {
-    @include retina-image('../assets/images/html-ribbon', png);
+    @include hidpi('../assets/images/html-ribbon', png);
   }
   &.handlebars .ribbon {
-    @include retina-image('../assets/images/handlebars-ribbon', png);
+    @include hidpi('../assets/images/handlebars-ribbon', png);
   }
 }
 
