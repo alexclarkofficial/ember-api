@@ -220,14 +220,15 @@ p {
           display: block;
         }
 
-        li.sub-selected {
-          background-color: #f2d1cb;
-          > a {
+        li {
+          > a.active{
+            background-color: #f2d1cb;
             font-family: 'Maven Pro';
             font-weight: bolder;
             color: #282828;
           }
         }
+
 
       }
 
