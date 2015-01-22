@@ -42,9 +42,9 @@
         {{evented-select content=model.versions action="versionChanged"}}
       </li>
 
-      <li class="level-1 selected">
+      <li class="level-1">
         <a href="#">Modules</a>
-        <ol class="selected">
+        <ol>
           {{#each module in model.modules}}
             {{#link-to 'module' module.name tagName='li' class='level-3'}}
               {{#link-to 'module' module.name}}{{module.name}}{{/link-to}}
