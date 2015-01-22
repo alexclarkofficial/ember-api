@@ -97,23 +97,3 @@ body.guides .highlight {
     color: #1f58ce;
   }
 }
-
-.handlebars {
-  .CodeRay {
-    .inline {
-      &,
-      .inline-delimiter,
-      .delimiter {
-        color: lighten($green, 10%);
-      }
-
-      .attribute-name {
-        color: $green;
-      }
-      .attribute-value,
-      .content {
-        color: darken($green, 10%);
-      }
-    }
-  }
-}
