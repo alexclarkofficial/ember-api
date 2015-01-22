@@ -51,7 +51,7 @@
   }
 
   .tiny-beta-image {
-    @include hidpi('builds/tiny_beta', 'png');
+    @include retina-image('../assets/images/builds/tiny_beta', 'png');
     width: 48px;
     height: 64px;
     margin: 0 auto;
@@ -61,7 +61,7 @@
   }
 
   .small-release-image {
-    @include hidpi('builds/small_release', 'png');
+    @include retina-image('../assets/images/builds/small_release', 'png');
     width: 99px;
     height: 132px;
     margin: 0 auto;
@@ -112,21 +112,21 @@
   }
 
   .feature .release {
-    @include hidpi('builds/release', 'png');
+    @include retina-image('../assets/images/builds/release', 'png');
     width: 198px;
     height: 263px;
     margin: 0 auto;
   }
 
   .feature .beta {
-    @include hidpi('builds/beta', 'png');
+    @include retina-image('../assets/images/builds/beta', 'png');
     width: 198px;
     height: 263px;
     margin: 0 auto;
   }
 
   .feature .canary {
-    @include hidpi('builds/canary', 'png');
+    @include retina-image('../assets/images/builds/canary', 'png');
     width: 198px;
     height: 263px;
     margin: 0 auto;

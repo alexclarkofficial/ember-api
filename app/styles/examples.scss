@@ -39,7 +39,7 @@
 }
 
 #content .example-highlight {
-  @include hidpi('code_background', 'gif');
+  @include retina-image('../assets/images/code_background', 'gif');
   @include box-shadow(0 1px white, inset -1px 1px 4px rgba(0, 0, 0, 0.1));
   font-size: 12px;
   font-family: Menlo, monospace;
@@ -50,9 +50,9 @@
 
 .example-arrow {
   margin: 17px auto;
-  width: image-width('about/example-arrow.png');
-  height: image-height('about/example-arrow.png');
-  @include hidpi('about/example-arrow', png);
+  width: image-width('../assets/images/about/example-arrow.png');
+  height: image-height('../assets/images/about/example-arrow.png');
+  @include retina-image('../assets/images/about/example-arrow', png);
 }
 
 .name-input {

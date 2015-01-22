@@ -28,7 +28,7 @@ code {
 }
 
 #content .highlight {
-  @include hidpi('code_background', 'gif');
+  @include retina-image('../assets/images/code_background', 'gif');
   border: 1px solid #d1d1d1;
   @include border-radius(5px);
   font-size: 12px;
@@ -139,6 +139,6 @@ code {
 }
 
 @mixin well {
-  @include hidpi('code_background', 'gif');
+  @include retina-image('../assets/images/code_background', 'gif');
   @include box-shadow(0 1px #ffffff, inset -1px 1px 4px rgba(0, 0, 0, 0.1));
 }
