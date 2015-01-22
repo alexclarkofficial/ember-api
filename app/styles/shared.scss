@@ -85,7 +85,7 @@ code {
       }
     }
 
-    li.active a {
+    li a.active {
       background-color:  #f67862;
       @include background-image(linear-gradient(0deg, #e7624b, #f67862));
       border-right: 1px solid #f67862;
